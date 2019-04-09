@@ -6,10 +6,17 @@
 	* [2 Scales](#2-Scales)
 	* [3 Measurement](#3-Measurement)
 * [Probability](#Probability)
-	* [1 线性回归](#1-线性回归)
-	* [2 岭回归和Lasso回归](#2-岭回归和Lasso回归)
-	* [3 CART树回归](#3-CART树回归)
-
+	* [1 Definition](#1-Definition)
+	* [2 Determine Probabilities](#2-Determine Probabilities)
+	* [3 Probability Distributions](#3-Probability Distributions)
+	* [4 Independence](#4-Independence)
+	* [5 Bayes's Rules](#5-Bayes's Rules)
+	* [6 Learning from data](#6-Learning from data)
+	* [7 Odds](#7-Odds)
+* [Summarizing data](#Summarizing data)
+	* [1 Summarizating tables](#1-Summarizating tables)
+	* [2 Idealized representations](#2-Idealized representations)
+* [Fitting models to data](#Fitting models to data)
 
 <!-- markdown-toc end -->
 
@@ -57,7 +64,7 @@ If P(Xi) is the probability of Xi:
 	P(A ^ B) = P(A) * P(B) if A and B are independent
 	P(A U B) = P(A) + P(B) - P(A ^ B)
 
-## 3 Probability distributions
+## 3 Probability Distributions
 1. Bernouli
 	P(k;n,p) = P(X=k) = (n k)T * p^k * (1-p)^(n-k)
 	(n k)T = n!/k! * (n-k)!
@@ -72,4 +79,28 @@ If P(Xi) is the probability of Xi:
 	P(B|A) = P(A|B) * P(B) / P(A)
 	       = P(A|B) * P(B) / P(A|B) * P(B) + P(A|~B) * P(~B)
 
+## 6 Learning from data
+	P(A|B) --likehood
+	P(A) --marginal likehood
+	P(B|A) --posterior
 
+## 7 Odds
+	posterior odds = P(A|B) / P(~A|B)
+	prior odds = P(A) / P(~A)
+	odds ratio = posterior odds / prior odds
+
+
+# Summarizing data
+
+## 1 Summarizating tables
+1. frequency distributions
+2. cumulative
+
+## 2 Idealized representations
+1. normal(Gaussian) mean + standard deviation
+2. skewness :: measure is non-negative
+	right-skewed is common
+3. long-tailed distributions
+
+
+# Fitting models to data
