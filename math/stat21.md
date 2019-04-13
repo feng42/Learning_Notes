@@ -17,7 +17,12 @@
 	* [1 Summarizating tables](#1-Summarizating tables)
 	* [2 Idealized representations](#2-Idealized representations)
 * [Fitting models to data](#Fitting models to data)
-
+	* [1 model](#1-model)
+	* [2 modeling](#2-modeling)
+	* [3 what makes a model "good"](#3-what makes a model good)
+	* [4 some models](#4-some models)
+	* [5 Variability](#5-Variability)
+	* [6 Z-scores](#2-Z-scores)
 <!-- markdown-toc end -->
 
 
@@ -104,3 +109,41 @@ If P(Xi) is the probability of Xi:
 
 
 # Fitting models to data
+## 1 model
+"All models are wrong but some are useful."
+	data = model + error
+## 2 modeling
+	mode : most common value
+	average: arithmetic mean
+	RMSE : root mean squared error
+	parameter \ constant(intercept)
+## 3 what makes a model good
+error comes from:
+	model is wrong
+	measurement error or noise
+sample : a set of data points selected
+## 4 some models
+mean : 
+	minimize sum of sqaured errors
+	highly sensitive to extreme values
+medium:
+	minimize sum of absolute errors
+	representitive of the group
+mode :
+	most common value
+
+## 5 Variability
+"hat"==estimate
+dispersion: how widely dispersed the data are
+variance: mean squared error
+degree of freedom: don't count==estimate will be biased
+
+## 6 Z-score
+	Z(x) = (x - mu) / sigma     ##calculate distribution
+		mean of zero (if not numerical precision)
+		standard deviation
+	Interpreting
+		standrad normal distribution(mean of Zero)
+	Standradlized scores
+		mean: 100
+		std deviation: 10 
