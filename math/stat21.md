@@ -22,7 +22,14 @@
 	* [3 what makes a model "good"](#3-what makes a model good)
 	* [4 some models](#4-some models)
 	* [5 Variability](#5-Variability)
-	* [6 Z-scores](#2-Z-scores)
+	* [6 Z-scores](#6-Z-scores)
+* [Fitting models to data](#Fitting models to data)
+	* [1 model](#1-model)
+	* [2 modeling](#2-modeling)
+	* [3 what makes a model "good"](#3-what makes a model good)
+	* [4 some models](#4-some models)
+	* [5 Variability](#5-Variability)
+	* [6 Z-scores](#6-Z-scores)
 <!-- markdown-toc end -->
 
 
@@ -112,16 +119,19 @@ If P(Xi) is the probability of Xi:
 ## 1 model
 "All models are wrong but some are useful."
 	data = model + error
+
 ## 2 modeling
 	mode : most common value
 	average: arithmetic mean
 	RMSE : root mean squared error
 	parameter \ constant(intercept)
+
 ## 3 what makes a model good
 error comes from:
 	model is wrong
 	measurement error or noise
 sample : a set of data points selected
+
 ## 4 some models
 mean : 
 	minimize sum of sqaured errors
@@ -139,7 +149,7 @@ variance: mean squared error
 degree of freedom: don't count==estimate will be biased
 
 ## 6 Z-score
-	Z(x) = (x - mu) / sigma     ##calculate distribution
+	Z(x) = (x - mu) / sigma     //calculate distribution
 		mean of zero (if not numerical precision)
 		standard deviation
 	Interpreting
@@ -147,3 +157,83 @@ degree of freedom: don't count==estimate will be biased
 	Standradlized scores
 		mean: 100
 		std deviation: 10 
+
+
+# Data Visulization
+## 1 Anatomy
+	bar / bar with points / violin / box
+
+## 2 Principles of good
+	data/ink ratio = amount of ink used / total amount of ink
+
+## 3 Avoid/Obey
+	* chartjunk
+	* distorting the data: axis scaling / zero
+	* lie factor
+	* perceptual limitations
+
+
+# Sampling
+## 1 how sampling
+	goal:
+		determine feature of interest, using subset
+		representative
+		compute bias
+		with/without replacement
+
+## 2 sampling error
+	sampling error
+		diffrence between sample and all data
+		related to measurement
+	sampling distribution
+		estimate vary from sample to sample	
+
+## 3 standard error of mean
+	SEM = sigma / sqrt(n)
+		n== size of sample
+		sigma== standrad deviation
+		sigma computed on the sample
+
+## 4 Central limit theorem
+	theorem
+		size get larger, sampling distribution of mean will be normally
+		even if data with each are not normally
+
+## 5 Confidence interval
+	definition
+		uncertainty about how close the estimate is
+	quantile
+		find the start & end of interval of distribution
+	compute
+		CI(95%) = _X +- 1.96 * SEM	//normal
+	explain
+		if is about sampling and distribution, the real value of data is dixed
+
+
+# Resampling and simulation
+## 1 Monte Carlo Simulation
+	performing:
+		Define a domain of possible values
+		Generate random numbers with that domain from a probability distribution
+		Perform a computation using the random numbers
+		Combine the results across many repetitions
+
+## 2 randomness
+	random process
+		unpredictable
+	preidolia / gambler's fallacy
+
+## 3 Generating random numbers
+	truly random is expensive to compute
+	pseudo-random
+		repeate after long time
+	using quantile function
+		generate from uniform distribution
+		map into distribution of interest
+	random seed
+
+## 4 bootstrap
+	idea
+		repeatedly sample from the dataset
+		sample with replacement
+	often used to generate standrad error for estimates of unknown distribution
