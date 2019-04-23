@@ -207,7 +207,7 @@ degree of freedom: don't count==estimate will be biased
 	compute
 		CI(95%) = _X +- 1.96 * SEM	//normal
 	explain
-		if is about sampling and distribution, the real value of data is dixed
+		if is about sampling and distribution, the real value of data is fixed
 
 
 # Resampling and simulation
@@ -237,3 +237,76 @@ degree of freedom: don't count==estimate will be biased
 		repeatedly sample from the dataset
 		sample with replacement
 	often used to generate standrad error for estimates of unknown distribution
+
+
+# Hypothesis testing
+Describe / Decide / Predict
+
+# 1 Null Hypothesis Statistical Testing
+	steps
+		Make predictions based on hypothesis
+		Collect some data relevant to the hypothesis
+		Specify null and alternative hypothesis
+		Fit a model to the data that represents the alternative and compute statistic
+		Compute the probability of the observed value of that statistic assuming that the null hypothesis is true
+		Assess the "statistical significance" of the result
+
+## 2 Process
+	null hypothesis==involves equality
+	alternative hypothesis==involve inequality
+	directional / non-directional == with/without predicting direction
+	t-statistic -- comparison of two independent groups
+		t = hat(X1) - hat(X2) / sqt(S1^2/n1 + S2^2/n2)
+		--hat(X) ==means of groups
+		--S^2 ==estimate variance of groups
+		--n ==size of groups
+	binomial distribution:
+		P(X<k) = Sum[ (N k)^T * p^i * (1-p)^(n-i) ]
+		P(X>=k) = 1 - P(X<k)
+	p-value
+		a value of the t-statistic greater than or equal to observed value
+		P(data|H0)
+
+## 3 Determine
+	statistical significance
+		0.05 
+		IS NOT practical significance
+	Neyman-Person approach
+		reject H0 if false (hit)
+		fail to reject H0 if true (correct rejection)
+		reject H0 while true (false alarm, Type I error)
+		fail to reject H0 if false (miss, Type II error)
+		P(Type I error) =alpha, set .05
+		P(Type II error) =beta, set .2
+	familywise error
+		error across all of the tests
+	
+
+# Confidence intervals, effect sizes, and statistical power
+## 1 Confidence intervals
+	DESCRIBE an interval that contain the true parameter with a given probability on average	
+	NOT statement about the parameters
+	Computed as
+		CI = point estimate +- critical value
+	if normal distribution
+		CI = hat(X) +- 1.96* SE  //95%
+	if t-distribution
+		CI = hat(X) +- t(crit)*SE
+
+## 2 Effect sizes
+	Cohen's D
+		d = (hat(X1) - hat(X2)) / s
+		s = sqrt( (n1-1)*s1^2 + (n2-1)*s2^2 / (n1+n2-2) )
+		0.2==small, 0.5==medium, 0.8==large
+	Pearson's r
+		correlation coeffcient
+		varies from -1 to 1
+	Odds ratio
+		pdds of A = P(A) / p(~A)
+
+## 3 Statistical power
+	power = 1 - beta
+	affect power
+		sample size:larger samples-> greater
+		effect size:finding larger effects is easier
+		Type I error rate:decrease -> decrease
